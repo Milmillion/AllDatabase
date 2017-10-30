@@ -19,5 +19,21 @@ add = Add_Method(studenID)
 # print(p.output_sum(s.get_this_semester_credit(),s.get_GPA(),s.get_cumulative_credit(),s.get_GPAX()))
 # print(re.name())
 
+# add.id_stu(Profile)
+# print(re.disease())
+# for item in re.disease():
+#     spinach = session.query(Disease).filter_by(id_student = "{}".format(studenID),Disease = "{}".format(item)).one()
+#     session.delete(spinach)
+# session.commit()
+# def edit_disease(edit,data):
+#     print(edit)
+#     for item in edit:
+#         spinach = session.query(Disease).filter_by(id_student = studenID ,Disease = "{}".format(item)).one()
+#         session.delete(spinach)
+#         print(item)
+#     sth = Disease(id_student = studenID,Disease = "{}".format(data))
+#     session.add(sth)
+#     session.commit()
 
-add.name("Thipawan")
+
+add.edit_disease(re.disease(),"xx")

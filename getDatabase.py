@@ -124,6 +124,7 @@ class return_Method:
             box.append(user.Confirm)
         return box
 
+
 class return_data(return_Method):
 
     def DicPro(self,name = None, surname = None, date = None, birth = None, nation = None, edu = None, disease = None, relative = None, phoneEmer = None, phonestu = None, address = None, email = None ):
@@ -140,7 +141,21 @@ class return_data(return_Method):
             dicAct = {'Name Activity' : NameAct[item], 'Description' : Descrip[item], 'Photo' : Photo[item], 'Type' : Type[item], 'Advisor' : Advisor[item], 'Date_Activity' : Date[item], 'File' : File[item], 'Confirm' : Confirm[item]}
             dataAct.append(dicAct)
         return dataAct
-    
+
+class Edit:
+    def __init__(self,id):
+        self.id = id
+
+    def edit_disease(self,edit,data):
+        print(edit)
+        for item in edit:
+            spinach = session.query(Disease).filter_by(id_student = "{}".format(self.id),Disease = "{}".format(item)).one()
+            session.delete(spinach)
+            print(item)
+        sth = Disease(id_student = "{}".format(self.id),Disease = "{}".format(data))
+        session.add(sth)
+        session.commit()
+
 class Add_Method:
 
     def __init__(self,id):
@@ -228,6 +243,17 @@ class Add_Method:
             dicAct = {'id_student' : self.id, 'Disease ' : item}
             dataAct.append(dicAct)
         return dataAct
+# ############################################################
+    def edit_disease(self,edit,data):
+        print(edit)
+        for item in edit:
+            spinach = session.query(Disease).filter_by(id_student = "{}".format(self.id),Disease = "{}".format(item)).one()
+            session.delete(spinach)
+            print(item)
+        sth = Disease(id_student = "{}".format(self.id),Disease = "{}".format(data))
+        session.add(sth)
+        session.commit()
+
 
 class Get_Academic:
     def __init__(self,studenID,term):
