@@ -135,10 +135,10 @@ class return_data(return_Method):
 
     def DicPro(self,name = None, surname = None, date = None, birth = None, nation = None, edu = None, disease = None, relative = None, phoneEmer = None, phonestu = None, address = None, email = None ):
         dataPro = []
-        for item in range(len(disease)):
-            dicPro = {'Name' : name, 'Surname' : surname, 'Dateofbirth' : date, 'Birthplace' : birth, 'Nation' : nation,
-                'Education' : edu,  'Disease' : disease[item], 'Relative' : relative,'PhoneEmer' : phoneEmer, 'Phonestudent' : phonestu, 'Address' : address, 'Email' : email }
-            dataPro.append(dicPro)
+        x = ",".join(disease)
+        dicPro = {'Name' : name, 'Surname' : surname, 'Dateofbirth' : date, 'Birthplace' : birth, 'Nation' : nation,
+                'Education' : edu,  'Disease' : x, 'Relative' : relative,'PhoneEmer' : phoneEmer, 'Phonestudent' : phonestu, 'Address' : address, 'Email' : email }
+        dataPro.append(dicPro)
         return dataPro
 
     def DicAct(self,NameAct = None, Descrip = None, Photo = None, Type = None, Advisor = None, Date = None, File = None, Confirm = None ):
