@@ -36,4 +36,4 @@ add = Add_Method(studenID)
 #     session.commit()
 
 
-add.edit_disease(re.disease(),"xx")
+add.edit_disease(re.disease())

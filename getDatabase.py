@@ -244,14 +244,13 @@ class Add_Method:
             dataAct.append(dicAct)
         return dataAct
 # ############################################################
-    def edit_disease(self,edit,data):
-        print(edit)
+    def edit_disease(self,edit,data=None):
         for item in edit:
             spinach = session.query(Disease).filter_by(id_student = "{}".format(self.id),Disease = "{}".format(item)).one()
             session.delete(spinach)
-            print(item)
-        sth = Disease(id_student = "{}".format(self.id),Disease = "{}".format(data))
-        session.add(sth)
+        if data != None:
+            sth = Disease(id_student = "{}".format(self.id),Disease = "{}".format(data))
+            session.add(sth)
         session.commit()
 
 
