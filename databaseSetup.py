@@ -10,19 +10,19 @@ Base = declarative_base()
 class Profile(Base):
     __tablename__ = 'Profile'
     id_student = Column(Integer,primary_key=True,nullable=False)
-    Name = Column(String,nullable=False)
-    Surname = Column(String,nullable=False)
-    Sex = Column(String,nullable=False)
-    Year = Column(Integer)
-    Dateofbirth = Column(String)
-    Birthplace = Column(String)
-    Nationality = Column(String)
-    Education = Column(String)
-    Relative = Column(String)
-    PhoneforEmergency = Column(String)
-    Phonestudent = Column(String)
-    Address = Column(String)
-    Email = Column(String)
+    Name = Column(String,nullable=True)
+    Surname = Column(String,nullable=True)
+    Sex = Column(String,nullable=True)
+    Year = Column(Integer,nullable=True)
+    Dateofbirth = Column(String,nullable=True)
+    Birthplace = Column(String,nullable=True)
+    Nationality = Column(String,nullable=True)
+    Education = Column(String,nullable=True)
+    Relative = Column(String,nullable=True)
+    PhoneforEmergency = Column(String,nullable=True)
+    Phonestudent = Column(String,nullable=True)
+    Address = Column(String,nullable=True)
+    Email = Column(String,nullable=True)
 
 class Disease(Base):
     __tablename__ = 'Disease'
@@ -33,13 +33,13 @@ class Activity(Base):
     __tablename__ = 'Activity'
     id_student = Column(Integer,primary_key=True)
     NameActivity = Column(String,primary_key=True)
-    Description = Column(String)
-    Photo = Column(String)#change next time
-    Type = Column(String)
-    Advisor = Column(String)
-    Date_Activity = Column(String)
-    File = Column(String)#change next time
-    Confirm = Column(String)
+    Description = Column(String,nullable=True)
+    Photo = Column(String,nullable=True)#change next time
+    Type = Column(String,nullable=True)
+    Advisor = Column(String,nullable=True)
+    Date_Activity = Column(String,nullable=True)
+    File = Column(String,nullable=True)#change next time
+    Confirm = Column(String,nullable=True)
 
 class Academic(Base):
     __tablename__ = 'academic'
@@ -69,4 +69,4 @@ class Subject(Base):
 
 Session = sessionmaker(bind=engine)
 session = Session()
-# Base.metadata.create_all(engine)
+Base.metadata.create_all(engine)

@@ -126,13 +126,6 @@ class return_Method:
 
 class return_data(return_Method):
 
-    # def Dicdisease(self,Disease = None):
-    #     dataAct = []
-    #     for item in Disease:
-    #         dicAct = {'id_student' : self.data, 'Disease ' : item}
-    #         dataAct.append(dicAct)
-    #     return dataAct
-
     def DicPro(self,name = None, surname = None, date = None, birth = None, nation = None, edu = None, disease = None, relative = None, phoneEmer = None, phonestu = None, address = None, email = None ):
         dataPro = []
         x = ",".join(disease)
@@ -145,6 +138,94 @@ class return_data(return_Method):
         dataAct = []
         for item in range(len(NameAct)):
             dicAct = {'Name Activity' : NameAct[item], 'Description' : Descrip[item], 'Photo' : Photo[item], 'Type' : Type[item], 'Advisor' : Advisor[item], 'Date_Activity' : Date[item], 'File' : File[item], 'Confirm' : Confirm[item]}
+            dataAct.append(dicAct)
+        return dataAct
+    
+class Add_Method:
+
+    def __init__(self,id):
+        self.id = id
+
+    def id_stu(self,method):
+        sth = method(id_student = "{}".format(self.id))
+        session.add(sth)
+        session.commit()
+
+    def name(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Name = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Surname(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Surname = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def date(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Dateofbirth = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def birth(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Birthplace = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def nation(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Nationality = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def education(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Education = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def disease(self,data):
+        sth = Disease(id_student = "{}".format(self.id),Disease = "{}".format(data))
+        session.add(sth)
+        session.commit()
+
+    def relative(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Relative = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def phoneEmer(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.PhoneforEmergency = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def phonestu(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Phonestudent = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def address(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Address = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def email(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Email = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Dicdisease(self,Disease = None):
+        dataAct = []
+        for item in Disease:
+            dicAct = {'id_student' : self.id, 'Disease ' : item}
             dataAct.append(dicAct)
         return dataAct
 

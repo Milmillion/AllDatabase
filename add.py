@@ -235,3 +235,37 @@ session = DBSession()
 # session.add(sub)
 # session.commit()
 #-------------------------------------------------------------------#
+
+# sth = Profile(id_student = 59340500035,Name = "Panchalee",Surname  = "Sookprao", Sex = "Miss", Year = 1, Dateofbirth = "12/21/41",Birthplace = "Hospital",Nationality = "Thai",Education = "Surin",Relative = "mom",PhoneforEmergency = "3434343434",Phonestudent = "66666666" ,Address = "Surin",Email = "pop@gmail.com")
+# sth1 = Profile(id_student = 59340500021,Name = "Thipawan",Surname  = "Pairam", Sex = "Miss", Year =1 ,Dateofbirth = "14/09/40",Birthplace = "Hospital1",Nationality = "Thai",Education = "Bungkan",Relative = "Dad",PhoneforEmergency = "0941234567",Phonestudent = "0867654321" ,Address = "Bungkan",Email = "pair@gmail.com")
+# sth2 = Profile(id_student = 59340500017,Name = "Natthaphon",Surname  = "Sudadech", Sex = "Mr", Year =1, Dateofbirth = "05/03/39",Birthplace = "Hospital2",Nationality = "Thai",Education = "Bungkan",Relative = "Mom",PhoneforEmergency = "087654321",Phonestudent = "0865432111" ,Address = "Bungkan",Email = "mill@gmail.com")
+# session.add(sth) #add sth into database.
+# session.add(sth1) #add sth into database.
+# session.add(sth2) #add sth into database.
+# sth = Activity(id_student = 59340500017,NameActivity = "Natthaphon",Description = "this is so fun.",Photo = "Mill.jpg",Type = "Dynamics",Advisor = "Prof.Ton",Date_Activity = "14/12/60",File = "file of the Dynamic",Confirm = "Not Confirm yet")
+# sth1 = Activity(id_student = 59340500021,NameActivity = "Thipawan",Description = "Receive a lot of knowledges.",Photo = "Pair.jpg",Type = "Calculas",Advisor = "Prof.Somran",Date_Activity = "15/12/61",File = "file of the Calculas",Confirm = "confirm")
+# sth2 = Activity(id_student = 59340500035,NameActivity = "Panchalee",Description = "It is will be useful.",Photo = "Popperzz.jpg",Type = "Digital",Advisor = "Prof.Pi",Date_Activity = "15/12/60",File = "file of the Digital",Confirm = "Not Confirm yet")
+# sth3 = Activity(id_student = 59340500035,NameActivity = "Table tennnis.",Description = "Table tennis is good.",Photo = "Popperzztennis.jpg",Type = "Sport",Advisor = "Prof.__",Date_Activity = "29/05/60",File = "file of the table tennis",Confirm = "Confirm")
+# session.add(sth) #add sth into database.
+# session.add(sth1) #add sth into database.
+# session.add(sth2) #add sth into database.
+# session.add(sth3) #add sth into database.
+#
+#
+# sth = Disease(id_student = 59340500017,Disease = "gout")
+# sth1 = Disease(id_student = 59340500017,Disease = "hemorrhoids")
+# sth2 = Disease(id_student = 59340500017,Disease = "pneumonia")
+# session.add(sth) #add sth into database.
+# session.add(sth1) #add sth into database.
+# session.add(sth2) #add sth into database.
+#
+# sth = Disease(id_student = 59340500035,Disease = "diarrhea")
+# sth1 = Disease(id_student = 59340500035,Disease = "enteritis")
+# session.add(sth) #add sth into database.
+# session.add(sth1) #add sth into database.
+#
+# sth = Disease(id_student = 59340500021,Disease = "heart disease")
+# sth1 = Disease(id_student = 59340500021,Disease = "measles")
+# session.add(sth) #add sth into database.
+# session.add(sth1) #add sth into database.
+# session.commit() #commit data that increase.
