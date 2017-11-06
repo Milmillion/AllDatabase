@@ -147,11 +147,9 @@ class Edit:
         self.id = id
 
     def edit_disease(self,edit,data):
-        print(edit)
         for item in edit:
             spinach = session.query(Disease).filter_by(id_student = "{}".format(self.id),Disease = "{}".format(item)).one()
             session.delete(spinach)
-            print(item)
         sth = Disease(id_student = "{}".format(self.id),Disease = "{}".format(data))
         session.add(sth)
         session.commit()
@@ -237,13 +235,60 @@ class Add_Method:
         session.add(addData)
         session.commit()
 
+    def Act_name(self,nameAct):
+        sth = Activity(id_student = "{}".format(self.id),NameActivity = "{}".format(nameAct))
+        session.add(sth)
+        session.commit()
+
+    def Act_des(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Description = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_photo(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Photo = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_type(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Type = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_advisor(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Advisor = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_date(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Date_Activity = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_file(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.File = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_confirm(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Confirm = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
     def Dicdisease(self,Disease = None):
         dataAct = []
         for item in Disease:
             dicAct = {'id_student' : self.id, 'Disease ' : item}
             dataAct.append(dicAct)
         return dataAct
-# ############################################################
+#############################################################
     def edit_disease(self,edit,data):
         print(edit)
         for item in edit:
@@ -304,7 +349,6 @@ class Get_Academic:
         for i in query.filter_by(Student_ID="{}".format(self.studenID)):
             gpax.append(i.GPAX)
         return gpax
-    # print(get_GPAX())
 
 class Get_name_credit_subject:
     def __init__(self,studenID,term):

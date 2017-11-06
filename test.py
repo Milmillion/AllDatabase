@@ -9,6 +9,11 @@ p = Academic_2st_table()
 re = return_Method(studenID)
 returnda = return_data(studenID)
 add = Add_Method(studenID)
+
+#########################Activity######################
+add.Act_des("Happy","swimming")
+
+########################Profile########################
 # print("Profile: ")
 # print(returnda.DicPro(re.name(), re.surname(), re.date(), re.birth(), re.nation(), re.education(), re.disease(), re.relative(),  re.PhoneEmer(), re.Phonestu(), re.address(), re.email()))
 # print("Activity: ")
@@ -36,4 +41,4 @@ add = Add_Method(studenID)
 #     session.commit()
 
 
-add.edit_disease(re.disease(),"xx")
+# add.edit_disease(re.disease(),"xx")
