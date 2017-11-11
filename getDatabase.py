@@ -439,8 +439,6 @@ class Check:
             for instance in session.query(StudentPW).order_by(StudentPW.id_student):
                 x = instance.id_student
                 box_id.append(x)
-            variable = [item for item, count in collections.Counter(box_id).items() if count >= 1]
-            variable1 = [i for i in variable]
 
             for instance in session.query(StudentPW).order_by(StudentPW.S_Password):
                 x = instance.S_Password
