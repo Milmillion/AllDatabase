@@ -1,4 +1,5 @@
 from getDatabase import *
+import collections
 studenID = "59340500021"
 term = "1/2559"
 
@@ -10,8 +11,23 @@ re = return_Method(studenID)
 returnda = return_data(studenID)
 add = Add_Method(studenID)
 
+t = Teacher()
+t.T_check("xxx","xxx01")
+# box = []
+# for instance in session.query(Activity).order_by(Activity.id_student):
+#     x = instance.id_student
+#     box.append(x)
+# xx = [item for item, count in collections.Counter(box).items() if count >= 1]
+# t = '59340500032'
+# for i in xx:
+#     if str(i)[:2] == "59":
+#         print(i)
+# xy = [i for i in xx if str(i)[:2] == t[:2]]
+# print(xy)
+
+
 #########################Activity######################
-add.Act_des("Happy","swimming")
+# add.Act_des("Happy","swimming")
 
 ########################Profile########################
 # print("Profile: ")

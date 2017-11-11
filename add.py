@@ -233,9 +233,9 @@ session = DBSession()
 # sub = Subject(ID_Subject ="MTH102",name_subject ="MATHEMATICS II",
 #  Credit =3)
 # session.add(sub)
-# session.commit()
-#-------------------------------------------------------------------#
-
+# # session.commit()
+# # -------------------------------------------------------------------#
+#
 # sth = Profile(id_student = 59340500035,Name = "Panchalee",Surname  = "Sookprao", Sex = "Miss", Year = 1, Dateofbirth = "12/21/41",Birthplace = "Hospital",Nationality = "Thai",Education = "Surin",Relative = "mom",PhoneforEmergency = "3434343434",Phonestudent = "66666666" ,Address = "Surin",Email = "pop@gmail.com")
 # sth1 = Profile(id_student = 59340500021,Name = "Thipawan",Surname  = "Pairam", Sex = "Miss", Year =1 ,Dateofbirth = "14/09/40",Birthplace = "Hospital1",Nationality = "Thai",Education = "Bungkan",Relative = "Dad",PhoneforEmergency = "0941234567",Phonestudent = "0867654321" ,Address = "Bungkan",Email = "pair@gmail.com")
 # sth2 = Profile(id_student = 59340500017,Name = "Natthaphon",Surname  = "Sudadech", Sex = "Mr", Year =1, Dateofbirth = "05/03/39",Birthplace = "Hospital2",Nationality = "Thai",Education = "Bungkan",Relative = "Mom",PhoneforEmergency = "087654321",Phonestudent = "0865432111" ,Address = "Bungkan",Email = "mill@gmail.com")
@@ -268,4 +268,26 @@ session = DBSession()
 # sth1 = Disease(id_student = 59340500021,Disease = "measles")
 # session.add(sth) #add sth into database.
 # session.add(sth1) #add sth into database.
+# # session.commit() #commit data that increase.
+#
+# sth = TeacherPW(id_teacher = "xxx01",Name = "warasinee", Surname = "chaisangmongkon",T_Password = "xxx01")
+# sth1 = TeacherPW(id_teacher = "xxx02",Name = "bawornsak", Surname = "sakulkueakulsuk",T_Password = "xxx02")
+# sth2 = TeacherPW(id_teacher = "xxx03",Name = "Suriya", Surname = "Natsupakpong",T_Password = "xxx03")
+# session.add(sth) #add sth into database.
+# session.add(sth1) #add sth into database.
+# session.add(sth2) #add sth into database.
+#
+# sth = StudentPW(id_student = 59340500021,S_Password = "59340500021")
+# sth1 = StudentPW(id_student = 59340500035,S_Password = "59340500035")
+# sth2 = StudentPW(id_student = 59340500017,S_Password = "59340500017")
+# session.add(sth) #add sth into database.
+# session.add(sth1) #add sth into database.
+# session.add(sth2) #add sth into database.
 # session.commit() #commit data that increase.
+
+
+
+
+
+
+

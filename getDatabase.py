@@ -4,6 +4,7 @@ from sqlalchemy import *
 from sqlalchemy.orm import *
 from sqlalchemy.ext.declarative import declarative_base
 from databaseSetup import *
+import collections
 
 engine = create_engine('sqlite:///Database.db')
 Base.metadata.bind=engine
@@ -12,11 +13,16 @@ session = DBSession()
 query = session.query(Profile)
 Acque = session.query(Activity)
 disquery = session.query(Disease)
+teacher = session.query(TeacherPW)
 
 class return_Method:
 
     def __init__(self,data):
         self.data = data
+
+    def idstu(self):
+        for user in query.filter_by(id_student="{}".format(self.data)):
+            return user.id_student
 
     def name(self):
         for user in query.filter_by(id_student="{}".format(self.data)):
@@ -141,6 +147,16 @@ class return_data(return_Method):
             dicAct = {'Name_Activity' : NameAct[item], 'Description' : Descrip[item], 'Photo' : Photo[item], 'Type' : Type[item], 'Advisor' : Advisor[item], 'Date_Activity' : Date[item], 'File' : File[item], 'Confirm' : Confirm[item]}
             dataAct.append(dicAct)
         return dataAct
+
+    def DicFRAB(self):
+        box = []
+        for instance in session.query(Profile).order_by(Profile.id_student):
+            id = instance.id_student
+            box.append(id)
+        countid = [item for item, count in collections.Counter(box).items() if count >= 1]
+        Frab = [i for i in countid if str(i)[:2] == "59"]
+        return Frab
+
 
 class Edit:
     def __init__(self,id):
@@ -391,3 +407,29 @@ class Academic_2st_table:
              "Cumulative credit":cumulative_credit[i],"GPAX":gpax[i]}
             list_sum_output.append(dict_output_term)
         return list_sum_output
+
+class Teacher:
+        def T_check(self,id,password):
+            box_id = []
+            box_P = []
+            for instance in session.query(TeacherPW).order_by(TeacherPW.id_teacher):
+                x = instance.id_teacher
+                box_id.append(x)
+            variable = [item for item, count in collections.Counter(box_id).items() if count >= 1]
+
+            for instance in session.query(TeacherPW).order_by(TeacherPW.T_Password):
+                x = instance.T_Password
+                box_P.append(x)
+            variable1 = [item for item, count in collections.Counter(box_P).items() if count >= 1]
+            for i in variable:
+                if(i == id):
+                    for j in variable1:
+                        if(j == password):
+                            print("True")
+                            return True
+                        else:
+                            print("False")
+                            return False
+                else:
+                    print("False")
+                    return False

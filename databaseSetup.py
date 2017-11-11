@@ -34,11 +34,11 @@ class Activity(Base):
     id_student = Column(Integer,primary_key=True)
     NameActivity = Column(String,primary_key=True)
     Description = Column(String,nullable=True)
-    Photo = Column(String,nullable=True)#change next time
+    Photo = Column(String,nullable=True)#will be change next time
     Type = Column(String,nullable=True)
     Advisor = Column(String,nullable=True)
     Date_Activity = Column(String,nullable=True)
-    File = Column(String,nullable=True)#change next time
+    File = Column(String,nullable=True)#will be change next time
     Confirm = Column(String,nullable=True)
 
 class Academic(Base):
@@ -66,6 +66,19 @@ class Subject(Base):
     ID_Subject = Column(String(10),primary_key=True)
     name_subject = Column(String(50), nullable=False)
     Credit = Column(Integer, nullable=False)
+
+class TeacherPW(Base):
+    __tablename__ = 'TeacherPW'
+    id_teacher = Column(String,primary_key=True)
+    Name = Column(String,nullable=True)
+    Surname = Column(String,nullable=True)
+    T_Password = Column(String,nullable=False)
+
+class StudentPW(Base):
+    __tablename__ = 'StudentPW'
+    id_student = Column(Integer,primary_key=True,nullable=False)
+    S_Password = Column(String,nullable=False)
+
 
 Session = sessionmaker(bind=engine)
 session = Session()
