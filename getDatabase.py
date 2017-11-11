@@ -415,24 +415,23 @@ class Check:
             for instance in session.query(TeacherPW).order_by(TeacherPW.id_teacher):
                 x = instance.id_teacher
                 box_id.append(x)
-            variable = [item for item, count in collections.Counter(box_id).items() if count >= 1]
 
             for instance in session.query(TeacherPW).order_by(TeacherPW.T_Password):
                 x = instance.T_Password
                 box_P.append(x)
-            variable1 = [item for item, count in collections.Counter(box_P).items() if count >= 1]
-            for i in variable:
-                if(i == id):
-                    for j in variable1:
-                        if(j == password):
-                            print("True")
-                            return True
-                        else:
-                            print("password is Wrong")
-                            return False
-                else:
-                    print("id is Wrong")
-                    return False
+            count = 0
+            for i in box_id:
+                if( i == id):
+                    count += 1
+            for j in box_P:
+                if( j == password):
+                    count += 1
+            if(count == 2):
+                print("True")
+                return True
+            else:
+                print("False")
+                return False
 
         def S_check(self,id,password):
             box_id = []
@@ -441,24 +440,25 @@ class Check:
                 x = instance.id_student
                 box_id.append(x)
             variable = [item for item, count in collections.Counter(box_id).items() if count >= 1]
+            variable1 = [i for i in variable]
 
             for instance in session.query(StudentPW).order_by(StudentPW.S_Password):
                 x = instance.S_Password
                 box_P.append(x)
-            variable1 = [item for item, count in collections.Counter(box_P).items() if count >= 1]
-            for i in variable:
-                if(id == i):
-                    print(i)
-                    for j in variable1:
-                        if(j == password):
-                            print("True")
-                            return True
-                        else:
-                            print("password is Wrong")
-                            return False
-                else:
-                    print("id is Wrong")
-                    return False
+            count = 0
+            for i in box_id:
+                if( i == id):
+                    count += 1
+            for j in box_P:
+                if( j == password):
+                    count += 1
+            if(count == 2):
+                print("True")
+                return True
+            else:
+                print("False")
+                return False
+
 
         def FRAB(self,frab):
             year = 56 + int(frab)

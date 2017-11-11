@@ -13,8 +13,8 @@ add = Add_Method(studenID)
 
 
 c = Check()
-c.T_check("xxx01","5901")
-# c.S_check(59340500021,"59340500021")
+# c.T_check("xxx03","xxx03")
+c.S_check(59340500021,"59340500021")
 # c.FRAB(3)
 
 ######################################################
@@ -23,11 +23,7 @@ c.T_check("xxx01","5901")
 #     x = instance.id_student
 #     box.append(x)
 # xx = [item for item, count in collections.Counter(box).items() if count >= 1]
-# t = '59340500032'
-# for i in xx:
-#     if str(i)[:2] == "59":
-#         print(i)
-# xy = [i for i in xx if str(i)[:2] == t[:2]]
+# xy = [i for i in xx]
 # print(xy)
 
 
