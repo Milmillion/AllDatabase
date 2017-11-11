@@ -402,8 +402,8 @@ class Academic_1st_table:
     def output_term(self,idsub = None,namesub = None,credit = None,grade = None):
         list_output_term = []
         for i in range(len(idsub)):
-            dict_output_term = {"ID Subject":idsub[i],"Name Subject":namesub[i],
-             "Credit":credit[i],"Academic Regcord":grade[i]}
+            dict_output_term = {"ID_Subject":idsub[i],"Name_Subject":namesub[i],
+             "Credit":credit[i],"Academic_Regcord":grade[i]}
             list_output_term.append(dict_output_term)
         return list_output_term
 
@@ -411,13 +411,14 @@ class Academic_2st_table:
     def output_sum(self,this_credit = None,gpa = None,cumulative_credit = None,gpax = None):
         list_sum_output = []
         for i in range(len(cumulative_credit)):
-            dict_output_term = {"This semester":this_credit[i],"GPA":gpa[i],
-             "Cumulative credit":cumulative_credit[i],"GPAX":gpax[i]}
+            dict_output_term = {"This_semester":this_credit[i],"GPA":gpa[i],
+             "Cumulative_credit":cumulative_credit[i],"GPAX":gpax[i]}
             list_sum_output.append(dict_output_term)
         return list_sum_output
 
 class Check:
         def T_check(self,id,password):
+            id = int(id)
             box_id = []
             box_P = []
             for instance in session.query(TeacherPW).order_by(TeacherPW.id_teacher):
@@ -442,6 +443,7 @@ class Check:
                 return False
 
         def S_check(self,id,password):
+            id = int(id)
             box_id = []
             box_P = []
             for instance in session.query(StudentPW).order_by(StudentPW.id_student):
@@ -479,6 +481,19 @@ class Check:
                 re = return_Method(item)
                 dicfrab = {'Name' : re.name(),'Surname' : re.surname(),'ID' : re.idstu()}
                 datafrab.append(dicfrab)
-            print(datafrab)
             return datafrab
+
+        def checkfrab(self):
+            box = []
+            include = []
+            for instance in session.query(Profile).order_by(Profile.id_student):
+                x = instance.id_student
+                box.append(str(x))
+            for i in box:
+                year = str(i)[:2]
+                frab = int(year) - 56
+                word = "FRAB#"+str(frab)
+                if word not in include:
+                    include.append(word)
+            return include
 

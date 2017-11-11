@@ -14,19 +14,26 @@ add = Add_Method(studenID)
 
 c = Check()
 # c.T_check("xxx03","xxx03")
-c.S_check(59340500021,"59340500021")
+# c.S_check(59340500021,"59340500021")
 # c.FRAB(2)
 # re.t_name()
 
 
 ######################################################
 # box = []
-# for instance in session.query(Activity).order_by(Activity.id_student):
+# include = []
+# for instance in session.query(Profile).order_by(Profile.id_student):
 #     x = instance.id_student
-#     box.append(x)
-# xx = [item for item, count in collections.Counter(box).items() if count >= 1]
-# xy = [i for i in xx]
-# print(xy)
+#     box.append(str(x))
+# for i in box:
+#     year = str(i)[:2]
+#     frab = int(year) - 56
+#     word = "FRAB#"+str(frab)
+#     if word not in include:
+#         include.append(word)
+# print(include)
+
+
 
 
 #########################Activity######################
