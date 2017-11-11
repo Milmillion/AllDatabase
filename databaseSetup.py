@@ -69,7 +69,7 @@ class Subject(Base):
 
 class TeacherPW(Base):
     __tablename__ = 'TeacherPW'
-    id_teacher = Column(String,primary_key=True)
+    id_teacher = Column(Integer,primary_key=True)
     Name = Column(String,nullable=True)
     Surname = Column(String,nullable=True)
     T_Password = Column(String,nullable=False)

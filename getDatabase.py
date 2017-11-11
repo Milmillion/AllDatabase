@@ -130,6 +130,14 @@ class return_Method:
             box.append(user.Confirm)
         return box
 
+    def t_name(self):
+        for user in teacher.filter_by(id_teacher="{}".format(self.data)):
+            return user.Name
+
+    def t_surname(self):
+        for user in teacher.filter_by(id_teacher="{}".format(self.data)):
+            return user.Surname
+
 
 class return_data(return_Method):
 

@@ -1,6 +1,6 @@
 from getDatabase import *
 import collections
-studenID = "59340500021"
+studenID = "xxx01"
 term = "1/2559"
 
 s = Get_Academic(studenID,term)
@@ -14,8 +14,10 @@ add = Add_Method(studenID)
 
 c = Check()
 # c.T_check("xxx03","xxx03")
-# c.S_check(59340500021,"   59340500021")
-# c.FRAB(3)
+c.S_check(59340500021,"59340500021")
+# c.FRAB(2)
+# re.t_name()
+
 
 ######################################################
 # box = []
