@@ -11,8 +11,13 @@ re = return_Method(studenID)
 returnda = return_data(studenID)
 add = Add_Method(studenID)
 
-t = Teacher()
-t.T_check("xxx","xxx01")
+
+c = Check()
+c.T_check("xxx01","5901")
+# c.S_check(59340500021,"59340500021")
+# c.FRAB(3)
+
+######################################################
 # box = []
 # for instance in session.query(Activity).order_by(Activity.id_student):
 #     x = instance.id_student

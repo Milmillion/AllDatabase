@@ -408,7 +408,7 @@ class Academic_2st_table:
             list_sum_output.append(dict_output_term)
         return list_sum_output
 
-class Teacher:
+class Check:
         def T_check(self,id,password):
             box_id = []
             box_P = []
@@ -428,8 +428,51 @@ class Teacher:
                             print("True")
                             return True
                         else:
-                            print("False")
+                            print("password is Wrong")
                             return False
                 else:
-                    print("False")
+                    print("id is Wrong")
                     return False
+
+        def S_check(self,id,password):
+            box_id = []
+            box_P = []
+            for instance in session.query(StudentPW).order_by(StudentPW.id_student):
+                x = instance.id_student
+                box_id.append(x)
+            variable = [item for item, count in collections.Counter(box_id).items() if count >= 1]
+
+            for instance in session.query(StudentPW).order_by(StudentPW.S_Password):
+                x = instance.S_Password
+                box_P.append(x)
+            variable1 = [item for item, count in collections.Counter(box_P).items() if count >= 1]
+            for i in variable:
+                if(id == i):
+                    print(i)
+                    for j in variable1:
+                        if(j == password):
+                            print("True")
+                            return True
+                        else:
+                            print("password is Wrong")
+                            return False
+                else:
+                    print("id is Wrong")
+                    return False
+
+        def FRAB(self,frab):
+            year = 56 + int(frab)
+            id_stu = []
+            datafrab = []
+            for instance in session.query(Profile).order_by(Profile.id_student):
+                x = instance.id_student
+                id_stu.append(x)
+            id = [item for item, count in collections.Counter(id_stu).items() if count == 1]
+            include = [i for i in id if str(i)[:2] == str(year)]
+            for item in include:
+                re = return_Method(item)
+                dicfrab = {'Name' : re.name(),'Surname' : re.surname(),'ID' : re.idstu()}
+                datafrab.append(dicfrab)
+            print(datafrab)
+            return datafrab
+
